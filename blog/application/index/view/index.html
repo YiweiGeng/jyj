@@ -1,0 +1,100 @@
+{extend name="layout"} {block name="header"}
+<!-- 对话框HTML -->
+<div class="modal fade" id="login">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">用户登录</h3>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="icon icon-user"></i></span>
+                    <input type="text" class="form-control" placeholder="用户名" autofocus="autofocus" autocomplete="off">
+                    <span class="input-group-addon"><i class="icon icon-key"></i></span>
+                    <input type="password" class="form-control" placeholder="密码">
+                    <span class="input-group-addon"><i class="icon icon-check"></i></span>
+                    <input type="text" class="form-control" placeholder="验证码">
+                    <span class="input-group-addon captcha">{:captcha_img()}
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<header>
+    <!-- <div id="login">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="icon icon-user"></i></span>
+            <input type="text" class="form-control" placeholder="用户名">
+            <span class="input-group-addon"><i class="icon icon-key"></i></span>
+            <input type="password" class="form-control" placeholder="密码">
+            <span class="input-group-addon"><i class="icon icon-heart"></i></span>
+        </div>
+    </div> -->
+    <nav class="navbar" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <!-- 移动设备上的导航切换按钮 -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-example">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- 品牌名称或logo -->
+                <a class="navbar-brand" href="your/nice/url">NO-ALONE</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-collapse-example">
+                <!-- 导航中的表单 -->
+                <form class="navbar-form navbar-left" role="search">
+                    <input type="text" placeholder="找不到了？点此尝试搜索" autocomplete="off">
+                </form>
+                <!-- 右侧的导航项目 -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a onclick="registe()">加入我们</a></li>
+                    <li><a onclick="login()">登&nbsp;录</a></li>
+                    <!-- <li class="dropdown">
+                        <a href="your/nice/url" class="dropdown-toggle" data-toggle="dropdown">登&nbsp;录<b class="caret"></b></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="your/nice/url">敏捷开发</a></li>
+                            <li><a href="your/nice/url">HTML5</a></li>
+                            <li><a href="your/nice/url">Javascript</a></li>
+                            <li class="divider"></li>
+                            <li><a href="your/nice/url">探索宇宙</a></li>
+                        </ul>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <nav class="navbar" role="navigation">
+        <ul class="nav navbar-nav">
+            <li class="brand"><a href="">NO-LONE</a></li>
+            <li>
+                <form>
+                    <input type="text" name="" placeholder="找不到了？请尝试在此搜索" autocomplete="off" spellcheck="false" />
+                </form>
+            </li>
+            <li></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="">登&nbsp;录</a></li>
+            <li><a href="index.php/index/index/registe">加入我们</a></li>
+        </ul>
+    </nav> -->
+</header>
+{/block} {block name="body"}
+<div class="main">
+    <div class="container content">
+    </div>
+</div>
+{/block} {block name="footer"}{/block} {block name="script"}
+<script type="text/javascript">
+function login() {
+    $('#login').modal('toggle');
+}
+</script>
+{/block}
