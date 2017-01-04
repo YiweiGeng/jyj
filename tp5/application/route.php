@@ -10,16 +10,19 @@
 // +----------------------------------------------------------------------
 
 use think\Route;
+Route::get('signup', 'index/index/signup');
+Route::post('signup', 'index/user/signup');
+Route::get('signin', 'index/index/signin');
+Route::post('signin', 'index/user/signin');
+Route::get('logout', 'index/user/logout');
 
 return [
-    '__pattern__' => [
-        'name' => '\w+',
-    ],
-    '[hello]'     => [
-        ':id'   => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
-        ':name' => ['index/hello', ['method' => 'post']],
-    ],
+	'__pattern__' => [
+		'name' => '\w+',
+	],
+	'[hello]' => [
+		':id' => ['index/hello', ['method' => 'get'], ['id' => '\d+']],
+		':name' => ['index/hello', ['method' => 'post']],
+	],
 
 ];
-
-Route::get('/registe', 'index.php/index/index/registe');
